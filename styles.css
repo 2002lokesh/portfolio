@@ -1,0 +1,195 @@
+/* General Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: black;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+/* Profile Section */
+#about {
+  padding: 80px 0;
+  text-align: center;
+  background-color: #222;
+}
+
+.profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.profile-image img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 3px solid #00FF9F;
+  box-shadow: 0 0 20px rgba(0, 255, 159, 0.6);
+  transition: transform 0.3s;
+}
+
+.profile-image img:hover {
+  transform: scale(1.1);
+}
+
+.profile-text {
+  margin-top: 30px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#about h1 {
+  font-size: 3rem;
+  color: #00FF9F;
+  margin-bottom: 15px;  /* Add spacing between the heading and text */
+}
+
+#about p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 20px;  /* Add spacing below the paragraph */
+}
+
+/* Download Resume Button */
+.download-btn {
+  padding: 12px 30px;
+  background-color: #00FF9F;
+  color: #111;
+  text-decoration: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 20px; /* Add margin-top to keep the button separate */
+  display: inline-block; /* Ensure button doesn't merge with text */
+}
+
+.download-btn:hover {
+  background-color: #00e68a;
+  transform: scale(1.05);
+}
+
+/* Navbar Styles */
+nav {
+  background-color: black;
+  padding: 1rem;
+  text-align: center;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 15px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+nav ul li a:hover {
+  color: #00FF9F; /* Neon green color */
+}
+
+/* Projects Section */
+#projects {
+  padding: 30px; /* Reduced padding for smaller section */
+  text-align: center;
+}
+
+.project-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px; /* Reduced gap between the boxes */
+}
+
+.project-box {
+  background-color: #333;
+  width: 240px; /* Reduced width */
+  height: 150px; /* Reduced height */
+  margin: 10px; /* Reduced margin */
+  position: relative;
+  border: 2px solid #00FF9F;
+  transition: transform 0.4s, height 0.4s;
+  overflow: hidden;
+}
+
+.project-box:hover {
+  transform: scale(1.05);
+  height: 250px; /* Adjusted hover height */
+}
+
+.project-content {
+  padding: 02px; /* Reduced padding */
+  color: white;
+}
+
+.project-description {
+  display: none;
+}
+
+.project-box:hover .project-description {
+  display: block;
+  animation: slide-up 0.2s ease;
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact Section */
+#contact {
+  padding: 50px;
+  text-align: center;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: none;
+  background-color: #333;
+  color: white;
+  border: 2px solid #00FF9F;
+}
+
+.contact-form button {
+  background-color: #00FF9F;
+  border: none;
+  padding: 10px 20px;
+  color: black;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  background-color: #00e68a;
+}
+
+/* Footer Styles */
+footer {
+  background-color: black;
+  text-align: center;
+  padding: 20px;
+}
+
+footer p {
+  margin: 0;
+  color: white;
+}

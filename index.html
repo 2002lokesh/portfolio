@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="profile">
+      <!-- Profile Image -->
+      <div class="profile-image">
+        <img src="lokesh.png" alt="Lokesh's Profile Picture">
+      </div>
+      
+      <div class="profile-text">
+        <h1>Welcome to My Portfolio</h1>
+        <p>I'm Lokesh, a passionate Software Developer with expertise in full-stack development, API integrations, and cloud technologies. I build scalable, user-friendly applications that solve complex problems and drive business growth. Let's collaborate on innovative projects that make an impact.</p>
+        
+        <!-- Download Resume Button -->
+        <a href="resume.pdf" download class="download-btn">Download Resume</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <!-- Project 1 -->
+      <div class="project-box">
+        <div class="project-content">
+          <h3>Phishing URL Detection Using Machine Learning and Flask Application</h3>
+          <p class="project-description"><b>Technology Used:</b> Python<br>Flask Application<br>HTML/CSS/JavaScript</p>
+        </div>
+      </div>
+      <!-- Project 2 -->
+      <div class="project-box">
+        <div class="project-content">
+          <h3>Spam SMS and Email Detection</h3>
+          <p class="project-description"><b>Technology Used:</b> Python<br>Streamlit<br>Google Sheets API for storing the SMS<br>Drive API to view the stored messages and email</p>
+        </div>
+      </div>
+      <!-- Project 3 -->
+      <div class="project-box">
+  <div class="project-content">
+    <h3>Odoo Chatbot</h3>
+    <p class="project-description"><b>Technology Used:</b><br>
+      Python<br>
+      Odoo Framework<br>
+      PostgreSQL (Psql) Database<br>
+      Natural Language Processing<br>
+      FastAPI for API integration<br>
+    </p>
+  </div>
+</div>
+<!-- Project 4 -->
+      <div class="project-box">
+  <div class="project-content">
+    <h3>LMS Dashboard Google Apis</h3>
+    <p class="project-description"><b>Technology Used:</b><br>
+      Google Meet API (for virtual classes)<br>
+      Google Calendar API (for scheduling classes)<br>
+      
+      FastAPI (for backend API integration)<br>
+    </p>
+  </div>
+</div>
+<!-- Project 5 -->
+      <div class="project-box">
+  <div class="project-content">
+    <h3>LMS Dashboard Microsoft Apis</h3>
+    <p class="project-description"><b>Technology Used:</b><br>
+      Teams API (for virtual classes)<br>
+      Microsoft Calendar API (for scheduling classes)<br>
+      Onedrive Api(for video recording)<br>
+      
+      FastAPI (for backend API integration)<br>
+    </p>
+  </div>
+</div>
+<!-- Project 6 -->
+      <div class="project-box">
+  <div class="project-content">
+    <h3>GSTIN Verfication Api</h3>
+    <p class="project-description"><b>Technology Used:</b><br>
+      GSTIN Api <br>
+      Python<br>
+      
+      FastAPI (for backend API integration)<br>
+    </p>
+  </div>
+</div>
+
+
+      <!-- Add more project-boxes as needed -->
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <h2>Contact Me</h2>
+    <form action="#" method="post" class="contact-form">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2024 Lokesh. All Rights Reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
