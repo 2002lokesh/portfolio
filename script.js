@@ -1,49 +1,79 @@
-// Select DOM elements
-const addTaskBtn = document.getElementById('add-task-btn');
-const taskInput = document.getElementById('new-task-input');
-const taskList = document.getElementById('task-list');
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
 
-// Add task function
-addTaskBtn.addEventListener('click', () => {
-    const taskValue = taskInput.value.trim();
-    if (taskValue === '') {
-        alert('Please enter a task');
-        return;
-    }
-
-    // Create list item
-    const li = document.createElement('li');
-    
-    // Create task span
-    const taskSpan = document.createElement('span');
-    taskSpan.textContent = taskValue;
-    taskSpan.classList.add('task');
-    taskSpan.addEventListener('click', () => {
-        taskSpan.classList.toggle('completed');
+    hamburger.addEventListener('click', () => {
+        nav.classList.toggle('active');
     });
 
-    // Create delete button
-    const deleteBtn = document.createElement('button');
-    deleteBtn.textContent = 'Delete';
-    deleteBtn.classList.add('delete-btn');
-    deleteBtn.addEventListener('click', () => {
-        taskList.removeChild(li);
+    // JavaScript for handling form submission
+    document.getElementById('contact-form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent default form submission
+
+        const formData = new FormData(this); // Gather form data
+        const actionUrl = 'https://formspree.io/f/xrbgbgrn'; // Action URL hidden in JS
+
+        // Send form data to Formspree
+        fetch(actionUrl, {
+            method: 'POST',
+            body: formData,
+            headers: {
+                'Accept': 'application/json' // Specify that you want a JSON response
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                alert('Your message has been sent!');
+                this.reset(); // Clear the form after successful submission
+            } else {
+                alert('There was a problem with your submission. Please try again.');
+            }
+        })
+        .catch(error => {
+            alert('There was a problem with your submission. Please try again.');
+        });
     });
 
-    // Append task and delete button to list item
-    li.appendChild(taskSpan);
-    li.appendChild(deleteBtn);
+    const typingElement = document.getElementById('typing');
+    const words = ["Odoo Developer", "Developer", "Python Developer", "Freelancer", "Full Stack Developer"];
+    let wordIndex = 0;
+    let letterIndex = 0;
+    let currentWord = '';
+    let currentLetters = '';
+    let isDeleting = false;
 
-    // Append list item to task list
-    taskList.appendChild(li);
+    function type() {
+        if (isDeleting) {
+            currentLetters = currentWord.substring(0, letterIndex - 1);
+            letterIndex--;
+        } else {
+            currentLetters = currentWord.substring(0, letterIndex + 1);
+            letterIndex++;
+        }
 
-    // Clear input field
-    taskInput.value = '';
-});
+        typingElement.innerHTML = currentLetters;
 
-// Optional: Add task on "Enter" key press
-taskInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') {
-        addTaskBtn.click();
+        let typeSpeed = 200;
+        if (isDeleting) {
+            typeSpeed /= 2;
+        }
+
+        if (!isDeleting && letterIndex === currentWord.length) {
+            typeSpeed = 2000;
+            isDeleting = true;
+        } else if (isDeleting && letterIndex === 0) {
+            isDeleting = false;
+            wordIndex++;
+            if (wordIndex === words.length) {
+                wordIndex = 0;
+            }
+            currentWord = words[wordIndex];
+            typeSpeed = 500;
+        }
+
+        setTimeout(type, typeSpeed);
     }
+
+    currentWord = words[wordIndex];
+    type();
 });
