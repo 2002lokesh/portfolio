@@ -242,13 +242,14 @@ header {
     padding: 5rem 9%;
     min-height: 100vh;
     display: flex;
-    justify-content: space-between; /* Changed from center to space-between */
+    flex-direction: column; /* Change to column on smaller screens */
+    justify-content: center;
     align-items: center;
 }
 
 .contact-container {
     text-align: center;
-    max-width: 600px; /* Adjusted width for the contact form */
+    max-width: 600px;
 }
 
 .contact-container h2 {
@@ -261,23 +262,23 @@ header {
 .contact-form {
     display: flex;
     flex-direction: column;
-    gap: 2rem; /* Spacing between form fields */
+    gap: 2rem;
 }
 
 .contact-form label {
     display: flex;
     flex-direction: column;
-    font-size: 1.6rem; /* Font size for labels */
+    font-size: 1.6rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 1.5rem; /* Increased padding for larger input fields */
+    padding: 1.5rem;
     border: 1px solid #b74b4b;
     border-radius: 0.5rem;
     background-color: rgba(255, 255, 255, 0.1);
     color: white;
-    font-size: 1.6rem; /* Font size for inputs */
+    font-size: 1.6rem;
 }
 
 .contact-form button {
@@ -296,30 +297,44 @@ header {
 }
 
 .contact-image {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: flex-end; /* Align the image to the right */
-    align-items: center; /* Center the image vertically */
-    padding-right: 2rem; /* Add right padding to create space */
-    flex: 1; /* Allow the image container to take available space */
+    display: flex;
+    justify-content: center; /* Center the image on smaller screens */
+    align-items: center;
+    padding: 2rem 0; /* Add top/bottom padding for spacing */
+    width: 100%; /* Ensure the image takes up the full width */
 }
 
 .contact-image img {
-    max-width: 100%; /* Ensure the image is responsive */
-    height: auto; /* Maintain aspect ratio */
+    max-width: 100%;
+    height: auto;
     width: 80%; /* Set a specific width for the image */
 }
 
-.contact-form-container {
-    display: flex; /* Use flexbox for alignment */
-    justify-content: flex-end; /* Align the form to the right */
-    align-items: center; /* Center the form vertically */
-    padding-right: 2rem; /* Add right padding to create space */
-    flex: 1; /* Allow the form container to take available space */
-}
+/* Media query for screens smaller than 768px */
+@media (max-width: 768px) {
+    .contact {
+        flex-direction: column; /* Stack the form and image vertically */
+        align-items: center; /* Center both the form and the image */
+        padding: 3rem 5%; /* Reduce padding on smaller screens */
+    }
 
-.contact-form {
-    max-width: 400px; /* Adjust width for the form */
-    width: 100%; /* Ensure it takes full width of the container */
+    .contact-container h2 {
+        font-size: 3rem; /* Reduce the heading size */
+    }
+
+    .contact-form {
+        max-width: 100%; /* Ensure form takes full width on mobile */
+        width: 100%;
+    }
+
+    .contact-image {
+        padding-right: 0; /* Remove padding for better spacing */
+        width: 100%; /* Ensure the image container takes full width */
+    }
+
+    .contact-image img {
+        width: 100%; /* Make the image take full width on mobile */
+    }
 }
 
 
